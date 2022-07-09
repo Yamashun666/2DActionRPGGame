@@ -20,7 +20,7 @@ public class TestData : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log($"{itemData.itemName}‚ğæ“¾‚µ‚Ü‚µ‚½I");
+            //Debug.Log($"{itemData.itemName}ï¿½ï¿½ï¿½æ“¾ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½ï¿½I");
             Destroy(gameObject);
 
         }

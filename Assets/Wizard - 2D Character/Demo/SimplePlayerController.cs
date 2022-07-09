@@ -17,7 +17,7 @@ namespace ClearSky
         public static int useHiJunpSkillCount = 3;
         
 
-        [SerializeField] SpeedUpMagic speedUpMagic;
+        [SerializeField] MagicBase speedUpMagic;
         [SerializeField] HiJunp hiJunp;
 
         // Start is called before the first frame update
@@ -85,7 +85,7 @@ namespace ClearSky
                     anim.SetBool("isRun", true);
 
             }
-                transform.position += moveVelocity * movePower * Time.deltaTime * speedUpMagic._upSpeedVec;
+                transform.position += moveVelocity * movePower * Time.deltaTime * speedUpMagic.effectPower;
         }
         void Jump()
         {
