@@ -2,7 +2,7 @@
 
 namespace ClearSky
 {
-    public class SimplePlayerController : MonoBehaviour
+      class SimplePlayerController : MonoBehaviour
     {
         public float movePower = 10f;
         public float jumpPower = 15f; //Set Gravity Scale in Rigidbody2D Component to 5
@@ -13,7 +13,12 @@ namespace ClearSky
         private int direction = 1;
         bool isJumping = false;
         private bool alive = true;
+        public static int junpCount = 0;
+        public static int useHiJunpSkillCount = 3;
+        
 
+        [SerializeField] SpeedUpMagic speedUpMagic;
+        [SerializeField] HiJunp hiJunp;
 
         // Start is called before the first frame update
         void Start()
@@ -27,6 +32,19 @@ namespace ClearSky
             Restart();
             if (alive)
             {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    speedUpMagic.OnCall();
+                }
+                if (Input.GetKeyDown(KeyCode.G)&& junpCount <= 3 && useHiJunpSkillCount > 0)
+                {
+                    hiJunp.HijunpOnCall();
+                    useHiJunpSkillCount--;
+                }
+                else if(junpCount > 3)
+                {
+                    hiJunp.HijunpReset();
+                }
                 Hurt();
                 Die();
                 Attack();
@@ -67,7 +85,7 @@ namespace ClearSky
                     anim.SetBool("isRun", true);
 
             }
-            transform.position += moveVelocity * movePower * Time.deltaTime;
+                transform.position += moveVelocity * movePower * Time.deltaTime * speedUpMagic._upSpeedVec;
         }
         void Jump()
         {
@@ -76,6 +94,7 @@ namespace ClearSky
             {
                 isJumping = true;
                 anim.SetBool("isJump", true);
+                junpCount++;
             }
             if (!isJumping)
             {
@@ -84,7 +103,7 @@ namespace ClearSky
 
             rb.velocity = Vector2.zero;
 
-            Vector2 jumpVelocity = new Vector2(0, jumpPower);
+            Vector2 jumpVelocity = new Vector2(0, jumpPower * hiJunp._upJunpForce);
             rb.AddForce(jumpVelocity, ForceMode2D.Impulse);
 
             isJumping = false;
