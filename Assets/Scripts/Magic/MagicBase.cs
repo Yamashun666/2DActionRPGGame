@@ -14,7 +14,15 @@ public class MagicBase : MonoBehaviour {
 
     // 外部から_effectPowerを取得するゲッター
     public float effectPower {
-        get{ return _effectPower; }
+        get{ 
+            if (_data.isFastTake) { // 効果発動後１回限りで効果をかけたいか
+                float tempEffectPower = _effectPower; // 効果を一度別の変数に逃がす
+                _effectPower = _data.effectInitialValue; // 効果をリセットする
+                _isValid = false;
+                return tempEffectPower;
+            } else { // 何もなければ普通に効果を返す
+                return _effectPower; 
+            } }
     }
 
     // 発動する
@@ -30,16 +38,16 @@ public class MagicBase : MonoBehaviour {
             // _usingValidが0以下だったら早期リターンをして効果発動処理を行わない
             if (_usingValid > 0) {
                 _usingValid--;
-                Debug.LogError(_usingValid);
             } else {
-                
                 return;
             }
         }
-
-        _isValid = true;
+        
         _effectPower = _data.effectPower;
-        Invoke(nameof(Reset), _data.effectTime);
+        _isValid = true;
+        if (!_data.isFastTake) {
+            Invoke(nameof(Reset), _data.effectTime);
+        }
     }
 
     // 終了時にリセットを行う
@@ -53,7 +61,6 @@ public class MagicBase : MonoBehaviour {
         _effectPower = _data.effectInitialValue;
         _isValid = false;
         _usingValid = _data.usingValid;
-        Debug.LogError(_usingValid);
     }
 
     // オブジェクトが破棄、非有効になったときに呼ばれる

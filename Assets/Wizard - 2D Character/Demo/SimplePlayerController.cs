@@ -13,12 +13,9 @@ namespace ClearSky
         private int direction = 1;
         bool isJumping = false;
         private bool alive = true;
-        public static int junpCount = 0;
-        public static int useHiJunpSkillCount = 3;
-        
 
         [SerializeField] MagicBase speedUpMagic;
-        [SerializeField] HiJunp hiJunp;
+        [SerializeField] MagicBase hiJunpMagic;
 
         // Start is called before the first frame update
         void Start()
@@ -36,14 +33,8 @@ namespace ClearSky
                 {
                     speedUpMagic.OnCall();
                 }
-                if (Input.GetKeyDown(KeyCode.G)&& junpCount <= 3 && useHiJunpSkillCount > 0)
-                {
-                    hiJunp.HijunpOnCall();
-                    useHiJunpSkillCount--;
-                }
-                else if(junpCount > 3)
-                {
-                    hiJunp.HijunpReset();
+                if (Input.GetKeyDown(KeyCode.G)) {
+                    hiJunpMagic.OnCall();
                 }
                 Hurt();
                 Die();
@@ -94,7 +85,6 @@ namespace ClearSky
             {
                 isJumping = true;
                 anim.SetBool("isJump", true);
-                junpCount++;
             }
             if (!isJumping)
             {
@@ -103,7 +93,7 @@ namespace ClearSky
 
             rb.velocity = Vector2.zero;
 
-            Vector2 jumpVelocity = new Vector2(0, jumpPower * hiJunp._upJunpForce);
+            Vector2 jumpVelocity = new Vector2(0, jumpPower * hiJunpMagic.effectPower);
             rb.AddForce(jumpVelocity, ForceMode2D.Impulse);
 
             isJumping = false;

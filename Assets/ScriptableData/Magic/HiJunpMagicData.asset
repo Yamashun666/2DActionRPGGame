@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: HiJunpMagicData
   m_EditorClassIdentifier: 
   type: 2
-  usingNum: 3
+  isUsingLimit: 1
+  usingValid: 4
+  effectInitialValue: 1
   effectTime: 0
-  effectPower: 50
-  stacking: 0
+  effectPower: 2
+  isFastTake: 1

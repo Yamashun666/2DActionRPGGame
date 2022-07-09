@@ -17,9 +17,11 @@ public class MagicScriptableData : ScriptableObject {
     // 回数制限
     public int usingValid;
     // _effectPowerを初期化する値
-    public float effectInitialValue;
+    public float effectInitialValue = 1.0f;
     // 効果時間
     public float effectTime;
     // 効果の強さ
     public float effectPower;
+    // １度effectPowerを取得したら初期値に戻すか
+    public bool isFastTake = false;
 }
