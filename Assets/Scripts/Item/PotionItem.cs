@@ -4,11 +4,23 @@ using UnityEngine;
 
 public class PotionItem : ItemBase
 {
+    
+    [SerializeField]
+
+    private void Start()
+    {
+        GetComponent<PlayerStatus>();
+    }
     public override void Use(PlayerStatus status)
     {
         base.Use(status);
         PotionData data = itemData as PotionData;
         status.Heal(data.healValue);
-        Debug.Log($"HPを{data.healValue}回復しました。");
+        if (status.currentHp >= status.maxHp)
+        {
+            status.currentHp = status.maxHp;
+
+        }
+        Debug.Log($"ポーション使用。現在HP{status.currentHp}");
     }
 }

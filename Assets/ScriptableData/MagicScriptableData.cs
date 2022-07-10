@@ -6,6 +6,7 @@ public enum MagicType {
     None,
     SpeedUp,
     HiJunp,
+    HealMagic,
 }
 
 [CreateAssetMenu(fileName = "MagicData", menuName = "MyScriptable/Create MagicData", order = 1)]

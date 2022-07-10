@@ -16,6 +16,7 @@ namespace ClearSky
 
         [SerializeField] MagicBase speedUpMagic;
         [SerializeField] MagicBase hiJunpMagic;
+        [SerializeField] PlayerStatus playerStatus;
 
         // Start is called before the first frame update
         void Start()
@@ -100,9 +101,12 @@ namespace ClearSky
         }
         void Attack()
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
+            if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 anim.SetTrigger("attack");
+                    playerStatus.currentHp -= 30;
+                    Debug.Log($"現在HP{playerStatus.currentHp}");
+
             }
         }
         void Hurt()
