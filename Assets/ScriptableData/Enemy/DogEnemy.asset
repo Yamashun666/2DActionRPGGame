@@ -13,10 +13,9 @@ MonoBehaviour:
   m_Name: DogEnemy
   m_EditorClassIdentifier: 
   type: 2
-  playerRangeY: 5
-  playerRangeX: 5
+  rangeY: 50
+  rangeX: 50
   enemyMaxHP: 150
-  enemyCurrentHP: 0
   enemyMaxMP: 150
-  enemyCurrentMP: 0
   isEnemyActive: 0
+  moveSpeed: 1.5

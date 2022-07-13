@@ -3,42 +3,39 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyBase : MonoBehaviour
-{   //ScriptableObjactを使用したエネミーデータ
-    [SerializeField] private EnemyScriptableData _data;
-    [SerializeField] public PlayerStatus _player;
-    [SerializeField] public EnemyPositionGetter _enemyController;
+{   
+    [SerializeField] private EnemyScriptableData _data; //ScriptableObjactを使用したエネミーデータ
+    [SerializeField] private GameObject player;         // 追跡用のRigidBodyを受け取る。
+    public float enemyCurrentHP = default;              // Enemyの現在体力
+    public float enemyCurrentMP = default;              // Enemyの現在マジックポイント
+    public bool _isEnemyActive  = false;                // EnemyがPlayerを発見しているかどうか
 
-
-    
-    // Enemyの現在体力
-    private float _enemyCurrentHP;
-    // Enemyの現在マジックポイント
-    private float _enemyMaxHP;
-    // EnemyがPlayerを発見しているかどうか
-    private bool _isEnemyActive = false;
-
-    // Playerと一定距離になった場合、Playerを発見する処理をする。
-    public virtual void OnActive()
+    void Start()
     {
-        // Playerとの距離
-        float rangeY = _player.transform.position.y - _enemyController.transform.position.y;
-        float rangeX = _player.transform.position.x - _enemyController.transform.position.x;
+        enemyCurrentHP = _data.enemyMaxHP;
+        enemyCurrentMP = _data.enemyMaxMP;
 
+    }
 
-
-        //Playerとの距離が一定以下なら、_isEnemyActiveをtrueにする
-       if(rangeX <= _data.rangeX && rangeY <= _data.rangeY)
+    public virtual void OnActive()                      // Playerと一定距離になった場合、Playerを発見する処理をする。
+    {
+        if(_data.DistanceX <= player.transform.position.x - this.transform.position.x)
         {
             _isEnemyActive = true;
         }
+        else if(_data.DistanceX >= player.transform.position.x - this.transform.position.x)
+        {
+            _isEnemyActive = false;
+        }
     }
-
-    //Playerを発見したら、戦闘開始する処理をする。
-    public virtual void OnBattle()
+    
+   
+    public virtual void OnBattle()                      //Playerを発見したら、戦闘開始する処理をする。
     {
         if (_isEnemyActive)
         {
-
+            
         }
+        
     }
 }

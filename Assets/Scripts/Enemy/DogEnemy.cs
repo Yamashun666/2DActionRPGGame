@@ -5,5 +5,8 @@ using UnityEngine.AI;
 
 public class DogEnemy : EnemyBase
 {
-    
+    public override void OnBattle()
+    {
+        base.OnBattle();
+    }
 }
