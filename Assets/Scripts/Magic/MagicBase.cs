@@ -8,7 +8,7 @@ public class MagicBase : MonoBehaviour {
     // 効果の強さ
     private float _effectPower;
     // 有効か
-    private bool _isValid;
+    private bool _isValid = false;
     // 残りの使用回数
     private int _usingValid;
 
@@ -24,6 +24,7 @@ public class MagicBase : MonoBehaviour {
                 return _effectPower; 
             } }
     }
+    public bool IsValid { get { return _isValid; } }
 
     // 発動する
     public virtual void OnCall() {

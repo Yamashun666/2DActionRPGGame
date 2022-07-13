@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyBase : MonoBehaviour
 {   
     [SerializeField] private EnemyScriptableData _data; //ScriptableObjactを使用したエネミーデータ
-    [SerializeField] private GameObject player;         // 追跡用のRigidBodyを受け取る。
+    [SerializeField] private GameObject player;        
     public float enemyCurrentHP = default;              // Enemyの現在体力
     public float enemyCurrentMP = default;              // Enemyの現在マジックポイント
     public bool _isEnemyActive  = false;                // EnemyがPlayerを発見しているかどうか

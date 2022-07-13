@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: AttackMagic
   m_EditorClassIdentifier: 
   type: 1
-  isUsingLimit: 1
-  usingValid: 3
+  isUsingLimit: 0
+  usingValid: 0
   effectInitialValue: 1
-  effectTime: 3.5
-  effectPower: 2
+  effectTime: 0.1
+  effectPower: 50
+  isFastTake: 0

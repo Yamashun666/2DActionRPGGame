@@ -16,6 +16,7 @@ namespace ClearSky
 
         [SerializeField] MagicBase speedUpMagic;
         [SerializeField] MagicBase hiJunpMagic;
+        [SerializeField] MagicBase attackMagic;
         [SerializeField] PlayerStatus playerStatus;
 
         // Start is called before the first frame update
@@ -36,6 +37,11 @@ namespace ClearSky
                 }
                 if (Input.GetKeyDown(KeyCode.G)) {
                     hiJunpMagic.OnCall();
+                }
+                if (Input.GetMouseButtonDown(0))
+                {
+                    Debug.Log("fuck");
+                    attackMagic.OnCall();
                 }
                 Hurt();
                 Die();
