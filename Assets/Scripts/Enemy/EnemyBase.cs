@@ -19,26 +19,26 @@ public class EnemyBase : MonoBehaviour
 
     public virtual void OnActive()                      // Playerと一定距離になった場合、Playerを発見する処理をする。
     {
-        if (_data.DistanceX <= player.transform.position.x - this.transform.position.x)
-        {
-            _isEnemyActive = true;
-        }
-        else if (_data.DistanceX >= player.transform.position.x - this.transform.position.x)
-        {
-            _isEnemyActive = false;
-        }
+        //    if (_data.DistanceX <= player.transform.position.x - this.transform.position.x)
+        //    {
+        //        _isEnemyActive = true;
+        //    }
+        //    else if (_data.DistanceX >= player.transform.position.x - this.transform.position.x)
+        //    {
+        //        _isEnemyActive = false;
+        //    }
     }
 
-    public virtual void OnBattle()                      //Playerを発見したら、戦闘開始する処理をする。
-    {
-        if (_isEnemyActive)
-        {
-            Destroy(gameObject);
-            Debug.Log("aho");
-        }
-    }
+//public virtual void OnBattle()                      //Playerを発見したら、戦闘開始する処理をする。
+//{
+//    if (_isEnemyActive)
+//    {
+//        Destroy(gameObject);
+//        Debug.Log("aho");
+//    }
+//}
 
-    private void Die()
+private void Die()
     {       
         
     }
