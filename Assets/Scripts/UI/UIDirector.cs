@@ -4,16 +4,18 @@ using UnityEngine;
 using UnityEngine.UI;
 public class UIDirector : MonoBehaviour
 {
-    [SerializeField] Slider slider;
+    [SerializeField] Slider HPslider;
+    [SerializeField] Slider MPslider;
     [SerializeField] PlayerStatus playerStatus;
-    [SerializeField] Text playerHP;
+    [SerializeField] Text player;
     private string hpText;
 
 
     //Start is called before the first frame update
     public void Start()
     {
-        slider.value = 1;
+        HPslider.value = 1;
+        MPslider.value = 1;
         GetComponent<PlayerStatus>();
         GetComponent<Text>();
 
@@ -22,7 +24,9 @@ public class UIDirector : MonoBehaviour
     //Update is called once per frame
     void Update()
     {
-        slider.value = (float)playerStatus.currentHp / (float)  playerStatus.maxHp;
-        playerHP.text = playerStatus.currentHp.ToString();
+        HPslider.value = (float)playerStatus.currentHp / (float)  playerStatus.maxHp;
+        player.text = playerStatus.currentHp.ToString();
+
+        MPslider.value = (float)playerStatus.currentMp / (float)playerStatus.maxMp;
     }
 }
