@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: HealMagicData
   m_EditorClassIdentifier: 
   type: 3
-  isUsingLimit: 1
-  usingValid: 3
+  isUsingLimit: 0
+  isMPUse: 1
+  useMP: 50
+  usingValid: 0
   effectInitialValue: 1
   effectTime: 3.5
   effectPower: 50
