@@ -110,8 +110,8 @@ namespace ClearSky
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 anim.SetTrigger("attack");
-                    playerStatus.currentHp -= 30;
-                    Debug.Log($"現在HP{playerStatus.currentHp}");
+                    //playerStatus.currentHp -= 30;
+                    //Debug.Log($"現在HP{playerStatus.currentHp}");
 
             }
         }
