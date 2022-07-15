@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: DogEnemy
   m_EditorClassIdentifier: 
   type: 2
-  rangeY: 50
-  rangeX: 50
+  DistanceY: 10
+  DistanceX: 10
   enemyMaxHP: 150
   enemyMaxMP: 150
   isEnemyActive: 0

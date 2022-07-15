@@ -90,5 +90,7 @@ public class MagicBase : MonoBehaviour {
         // 登録したInvokeをすべてキャンセル
         CancelInvoke();
     }
+
+    
     
 }

@@ -5,8 +5,16 @@ using UnityEngine.AI;
 
 public class DogEnemy : EnemyBase
 {
-    public override void OnBattle()
+    private void Update() // エネミーのHPが０以下になった場合、エネミーを消す
     {
-        base.OnBattle();
+        if(enemyCurrentHP <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
+    public override void OnActive()
+    {
+        base.OnActive();
+    }
+    
 }
