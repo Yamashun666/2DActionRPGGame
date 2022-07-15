@@ -4,6 +4,7 @@ using UnityEngine;
 public class MagicBase : MonoBehaviour {
     // ScriptableObjectを使用したマジックデータ
     [SerializeField] private MagicScriptableData _data;
+    [SerializeField] private PlayerStatus _status;
 
     // 効果の強さ
     private float _effectPower;
@@ -24,7 +25,9 @@ public class MagicBase : MonoBehaviour {
                 return tempEffectPower;
             } else { // 何もなければ普通に効果を返す
                 return _effectPower; 
-            } }
+            } 
+            
+        }
     }
     public bool IsValid { get { return _isValid; } }
     public int UsingValid { get { return _usingValid; } set { _usingValid = value; } }
@@ -33,9 +36,11 @@ public class MagicBase : MonoBehaviour {
     // 発動する
     public virtual void OnCall() {
         // 効果時間内ならば早期リターンをして効果発動処理を行わない
+        
         if (_isValid) {
             return;
         }
+
         // 回数制限があるならば使用可能回数を減らす処理をする
         if (_data.isUsingLimit){
             // _usingValidが1以上だったら使用回数を減らす
@@ -45,8 +50,13 @@ public class MagicBase : MonoBehaviour {
             } else {
                 return;
             }
+            
         }
-        
+        if (_data.isMPUse) // MP消費型の魔法の場合は、MPを消費して魔法を使う。
+        {
+            _status.currentMp -= _data.useMP;
+            Debug.Log(_status.currentMp);
+        }
         _effectPower = _data.effectPower;
         _isValid = true;
         if (!_data.isFastTake) {

@@ -15,6 +15,10 @@ public class MagicScriptableData : ScriptableObject {
     public MagicType type;
     // 回数制限が有効か
     public bool isUsingLimit = false;
+    // MP消費が有効か
+    public bool isMPUse = false;
+    // MP消費量
+    public int useMP;
     // 回数制限
     public int usingValid;
     // _effectPowerを初期化する値
