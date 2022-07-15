@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   isUsingLimit: 0
+  isMPUse: 0
+  useMP: 0
   usingValid: 0
-  effectInitialValue: 1
+  effectInitialValue: 50
   effectTime: 0.1
   effectPower: 50
   isFastTake: 0
