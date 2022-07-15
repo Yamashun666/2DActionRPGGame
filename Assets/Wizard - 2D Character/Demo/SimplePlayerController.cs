@@ -19,6 +19,8 @@ namespace ClearSky
         [SerializeField] MagicBase attackMagic;
         [SerializeField] PlayerStatus playerStatus;
 
+        public MagicBase HiJumpMagic { get { return hiJunpMagic; } }
+
         // Start is called before the first frame update
         void Start()
         {

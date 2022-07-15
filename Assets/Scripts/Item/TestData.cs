@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using ClearSky;
 
 public class TestData : MonoBehaviour
-{
+{ 
     public Item itemData;
     // Start is called before the first frame update
     void Start()
@@ -20,8 +21,14 @@ public class TestData : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            //Debug.Log($"{itemData.itemName}���擾���܂����I");
-            Destroy(gameObject);
+            SimplePlayerController simple = collision.GetComponent<SimplePlayerController>();
+            MagicBase magic = simple.HiJumpMagic;
+
+            if (simple.HiJumpMagic.ValidReset)
+            {
+                Destroy(gameObject);
+                simple.HiJumpMagic.UsingValidReset();
+            }
 
         }
     }

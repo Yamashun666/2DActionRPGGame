@@ -12,8 +12,11 @@ public enum ItemTypes
 [CreateAssetMenu(menuName = "MyScriptable/Create ItemData")]
 public class Item : ScriptableObject
 {
-    public string itemName;
-    public int buyPrice;
-    public ItemTypes itemType;
-    
+    public string itemName = default;
+    public int buyPrice = default;
+    public ItemTypes itemType = default;
+    public int effectForceIntType = default;
+    public float effectForceFloatType = default;
+
+
 }

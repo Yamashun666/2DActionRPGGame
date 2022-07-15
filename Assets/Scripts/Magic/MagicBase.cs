@@ -11,6 +11,8 @@ public class MagicBase : MonoBehaviour {
     private bool _isValid = false;
     // 残りの使用回数
     private int _usingValid;
+    // 最大スタック数
+    private int _maxUsingValid;
 
     // 外部から_effectPowerを取得するゲッター
     public float effectPower {
@@ -25,6 +27,8 @@ public class MagicBase : MonoBehaviour {
             } }
     }
     public bool IsValid { get { return _isValid; } }
+    public int UsingValid { get { return _usingValid; } set { _usingValid = value; } }
+    public bool ValidReset { get { return _maxUsingValid > _usingValid; } }
 
     // 発動する
     public virtual void OnCall() {
@@ -32,7 +36,6 @@ public class MagicBase : MonoBehaviour {
         if (_isValid) {
             return;
         }
-
         // 回数制限があるならば使用可能回数を減らす処理をする
         if (_data.isUsingLimit){
             // _usingValidが1以上だったら使用回数を減らす
@@ -50,6 +53,13 @@ public class MagicBase : MonoBehaviour {
             Invoke(nameof(Reset), _data.effectTime);
         }
     }
+    
+    //_usingValidの回数をリセットしたいときに呼ぶ
+    public void UsingValidReset()
+    {
+        _usingValid = _maxUsingValid;
+        Debug.Log(_usingValid);
+    }
 
     // 終了時にリセットを行う
     private void Reset() {
@@ -62,6 +72,7 @@ public class MagicBase : MonoBehaviour {
         _effectPower = _data.effectInitialValue;
         _isValid = false;
         _usingValid = _data.usingValid;
+        _maxUsingValid = _data.usingValid;
     }
 
     // オブジェクトが破棄、非有効になったときに呼ばれる
@@ -69,4 +80,5 @@ public class MagicBase : MonoBehaviour {
         // 登録したInvokeをすべてキャンセル
         CancelInvoke();
     }
+    
 }
