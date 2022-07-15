@@ -17,7 +17,7 @@ MonoBehaviour:
   isMPUse: 1
   useMP: 50
   usingValid: 0
-  effectInitialValue: 1
+  effectInitialValue: 0
   effectTime: 3.5
   effectPower: 50
   isFastTake: 0
