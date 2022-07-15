@@ -52,10 +52,17 @@ public class MagicBase : MonoBehaviour {
             }
             
         }
-        if (_data.isMPUse) // MP消費型の魔法の場合は、MPを消費して魔法を使う。
+        if (_data.isMPUse) // MP消費型の魔法の場合は、MPを消費して魔法を使う。MPが要求値未満の場合、早期リターンして処理を行わない。
         {
-            _status.currentMp -= _data.useMP;
-            Debug.Log(_status.currentMp);
+            if(_status.currentMp < _data.useMP)
+            {
+                return;
+            }
+            else
+            {
+                _status.currentMp -= _data.useMP;
+                Debug.Log(_status.currentMp);
+            }
         }
         _effectPower = _data.effectPower;
         _isValid = true;

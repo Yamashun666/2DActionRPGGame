@@ -55,7 +55,7 @@ public class PlayerStatus : MonoBehaviour
                     currentHp = maxHp;
                     
                 }
-                Debug.Log($"åªç›HP{currentHp}");
+                Debug.Log($"åªç›HP{currentMp}");
             }
             
 
