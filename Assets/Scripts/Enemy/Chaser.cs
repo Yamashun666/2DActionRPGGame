@@ -25,7 +25,7 @@ public class Chaser : MonoBehaviour
         }
         else if (this.transform.position.x <= target.transform.position.x)
         {
-            transform.Translate((target.transform.position.x + this.transform.position.x) / plusTransLate, 0, 0);
+            transform.Translate(((target.transform.position.x - this.transform.position.x ) / plusTransLate) * 1, 0, 0);
             renderer.flipX = true;
             //Debug.Log(this.transform.position.x);
         }
