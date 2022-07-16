@@ -3103,7 +3103,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data: {fileID: 11400000, guid: f618a2395c607d845a2fc397ede06e02, type: 2}
-  player: {fileID: 187040288}
   enemyCurrentHP: 0
   enemyCurrentMP: 0
   _isEnemyActive: 0
@@ -3663,7 +3662,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data: {fileID: 11400000, guid: f618a2395c607d845a2fc397ede06e02, type: 2}
-  player: {fileID: 187040288}
   enemyCurrentHP: 0
   enemyCurrentMP: 0
   _isEnemyActive: 0
@@ -4214,7 +4212,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data: {fileID: 11400000, guid: f618a2395c607d845a2fc397ede06e02, type: 2}
-  player: {fileID: 187040288}
   enemyCurrentHP: 0
   enemyCurrentMP: 0
   _isEnemyActive: 0
@@ -4731,7 +4728,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
