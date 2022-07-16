@@ -28,4 +28,8 @@ public class EnemyScriptableData : ScriptableObject
     public bool isEnemyActive = false;
     // Enemyの追跡スピード
     public float moveSpeed = 10.0f;
+    // 攻撃パワー1
+    public int attackPower1 = default;
+    // 攻撃パワー2
+    public int attackPower2 = default;
 }

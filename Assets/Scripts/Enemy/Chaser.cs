@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Chaser : MonoBehaviour
 {
-    [SerializeField] private EnemyScriptableData _data; //ScriptableObjactを使用したエネミーデータ
+    [SerializeField] private EnemyScriptableData _data; // ScriptableObjactを使用したエネミーデータ
     [SerializeField] private GameObject target;         // 追跡用のplayer.transform.positionを受け取る
     [SerializeField] private PlayerStatus status;       // 衝突したときにプレイヤーのHPを減らす為の変数
     SpriteRenderer renderer = default;

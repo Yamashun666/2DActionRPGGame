@@ -11,10 +11,5 @@ public class DogEnemy : EnemyBase
         {
             Destroy(gameObject);
         }
-    }
-    public override void OnActive()
-    {
-        base.OnActive();
-    }
-    
+    }  
 }
