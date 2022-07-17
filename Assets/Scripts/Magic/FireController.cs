@@ -8,6 +8,7 @@ public class FireController : MonoBehaviour
     public float fireSpeed = default;
     private Vector3 direction;
     private float power = default;
+    public float deleteTime = default;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,8 @@ public class FireController : MonoBehaviour
         direction = screenPosition - this.transform.position;
         direction.z = 0;
         direction = Vector3.Normalize(direction);
+
+        StartCoroutine(DeleteCount());
     }
 
     // Update is called once per frame
@@ -42,5 +45,11 @@ public class FireController : MonoBehaviour
             Debug.Log(_enemyHP.enemyCurrentHP);
         }
         
+    }
+    IEnumerator DeleteCount()
+    {
+        yield return new WaitForSeconds(deleteTime);
+        Destroy(gameObject);
+        Debug.Log("‚ ‚Ù");
     }
 }

@@ -113,3 +113,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireSpeed: 50
+  deleteTime: 0.5
