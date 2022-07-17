@@ -5,11 +5,20 @@ using UnityEngine.AI;
 
 public class DogEnemy : EnemyBase
 {
-    private void Update() // エネミーのHPが０以下になった場合、エネミーを消す
+    
+    private void Update() 
     {
-        if(enemyCurrentHP <= 0)
+        base.Chase();
+        base.Die();
+        
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject == target)
         {
-            Destroy(gameObject);
+            base.MeleeAttack();
+            base.MeleeAttackEnd();
         }
-    }  
+    }
 }

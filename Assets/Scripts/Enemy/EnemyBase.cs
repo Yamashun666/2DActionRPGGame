@@ -6,10 +6,10 @@ public class EnemyBase : MonoBehaviour
 {
     [SerializeField] private EnemyScriptableData _data; //ScriptableObjactを使用したエネミーデータ
     [SerializeField] private GameObject player;
-    [SerializeField] private GameObject target;         // 追跡用のtransform.positionを受け取る
+    [SerializeField] public GameObject target;          // 追跡用のtransform.positionを受け取る
+    [SerializeField] PlayerStatus status;               // Playerとダメージをやり取りする時のコンポーネント  
     private Rigidbody2D rb;                             // ジャンプするときようにRigidBodyを受け取る
     private SpriteRenderer renderer;                    // Sprite反転用にSpriteRendererを取得する
-    private PlayerStatus status;                        // Playerとダメージをやり取りする時のコンポーネント  
     public float enemyCurrentHP = default;              // Enemyの現在体力
     public float enemyCurrentMP = default;              // Enemyの現在マジックポイント
     public float junpForce = default;                   // Enemyがジャンプするときの力
@@ -17,6 +17,7 @@ public class EnemyBase : MonoBehaviour
     public float plusTransLate = default;　　　　　　　 // プラス方向にトランスする量をここで決める（値が大きいほど遅くなる）
     public float minusTransLate = default;              // マイナス方向にトランスする量をここで決める（値が大きいほど遅くなる）
     public bool isJunp = false;                         // ジャンプ中かどうか
+    public bool isMeleeAttack = false;                  // 攻撃中かどうか
     public bool isValid = false;                        // 行動中かどうか
     public bool isEnemyActive = false;                  // EnemyがPlayerを発見しているかどうか
     public bool isStay = false;                         // 待機中かどうか
@@ -35,12 +36,12 @@ public class EnemyBase : MonoBehaviour
     {
 
     }
-    void Stay()
+    public void Stay()
     {
         
     }
 
-    void Junp()
+    public void Junp()
     {
         if (isJunp) // もしジャンプ中なら早期リターンを行って処理を行わない。
         {
@@ -58,45 +59,54 @@ public class EnemyBase : MonoBehaviour
         }
     }
 
-    void Run()
+    public void Run()
     {
 
     }
 
-    void Shot()
+    public void Shot()
     {
 
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    
+
+    public void MeleeAttack()
     {
-        if (collision.gameObject == target)
+        if (isMeleeAttack)
         {
-            MeleeAttack();
+            return;
+        }
+
+        else
+        {
+            Debug.Log("fuck");
+            status.currentHp -= _data.attackPower1;
+            isMeleeAttack = true;
         }
     }
 
-    void MeleeAttack()
+    public void MeleeAttackEnd()
     {
-        status.currentHp -= _data.attackPower1;
+        isMeleeAttack = false;
     }
 
-    void Defence()
-    {
-
-    }
-
-    void Accelerate()
+    public void Defence()
     {
 
     }
 
-    void Attack()
+    public void Accelerate()
     {
 
     }
 
-    void Chase()
+    public void Attack()
+    {
+
+    }
+
+    public void Chase()
     {
         if (this.transform.position.x >= target.transform.position.x)
         {
@@ -111,7 +121,7 @@ public class EnemyBase : MonoBehaviour
         }
     }
 
-    void Die()
+    public void Die()
     {
         if(enemyCurrentHP <= 0)
         {
@@ -120,7 +130,7 @@ public class EnemyBase : MonoBehaviour
         }
     }
 
-    void Reward()
+    private void Reward()
     {
 
     }
