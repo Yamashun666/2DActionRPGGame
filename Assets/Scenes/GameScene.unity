@@ -2945,7 +2945,6 @@ GameObject:
   - component: {fileID: 955734216}
   - component: {fileID: 955734223}
   - component: {fileID: 955734220}
-  - component: {fileID: 955734219}
   - component: {fileID: 955734221}
   m_Layer: 0
   m_Name: opossum-1
@@ -3032,30 +3031,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 955734215}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 84.2, y: 16.88, z: 0.77688164}
+  m_LocalPosition: {x: 2.2, y: -0.93, z: 0.77688164}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 864032081}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &955734219
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 955734215}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 550a506b4ec06d2429368821132ab801, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _data: {fileID: 11400000, guid: f618a2395c607d845a2fc397ede06e02, type: 2}
-  target: {fileID: 187040288}
-  status: {fileID: 187040289}
-  attackPower: 25
-  plusTransLate: 1250
-  minusTransLate: 500
 --- !u!60 &955734220
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3103,9 +3084,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data: {fileID: 11400000, guid: f618a2395c607d845a2fc397ede06e02, type: 2}
+  player: {fileID: 187040288}
+  target: {fileID: 187040288}
+  status: {fileID: 187040289}
   enemyCurrentHP: 0
   enemyCurrentMP: 0
-  _isEnemyActive: 0
+  junpForce: 10
+  moveSpeed: 0
+  plusTransLate: 500
+  minusTransLate: 1250
+  isJunp: 0
+  isMeleeAttack: 0
+  isValid: 0
+  isEnemyActive: 0
+  isStay: 0
 --- !u!50 &955734223
 Rigidbody2D:
   serializedVersion: 4
@@ -3634,7 +3626,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1339187192
 Transform:
   m_ObjectHideFlags: 0
@@ -3662,9 +3654,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data: {fileID: 11400000, guid: f618a2395c607d845a2fc397ede06e02, type: 2}
+  player: {fileID: 0}
+  target: {fileID: 0}
+  status: {fileID: 0}
   enemyCurrentHP: 0
   enemyCurrentMP: 0
-  _isEnemyActive: 0
+  junpForce: 0
+  moveSpeed: 0
+  plusTransLate: 0
+  minusTransLate: 0
+  isJunp: 0
+  isMeleeAttack: 0
+  isValid: 0
+  isEnemyActive: 0
+  isStay: 0
 --- !u!114 &1339187194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4184,7 +4187,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1582816643
 Transform:
   m_ObjectHideFlags: 0
@@ -4212,9 +4215,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data: {fileID: 11400000, guid: f618a2395c607d845a2fc397ede06e02, type: 2}
+  player: {fileID: 0}
+  target: {fileID: 0}
+  status: {fileID: 0}
   enemyCurrentHP: 0
   enemyCurrentMP: 0
-  _isEnemyActive: 0
+  junpForce: 0
+  moveSpeed: 0
+  plusTransLate: 0
+  minusTransLate: 0
+  isJunp: 0
+  isMeleeAttack: 0
+  isValid: 0
+  isEnemyActive: 0
+  isStay: 0
 --- !u!114 &1582816645
 MonoBehaviour:
   m_ObjectHideFlags: 0
