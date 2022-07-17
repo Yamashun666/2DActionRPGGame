@@ -19,3 +19,5 @@ MonoBehaviour:
   enemyMaxMP: 150
   isEnemyActive: 0
   moveSpeed: 4
+  attackPower1: 25
+  attackPower2: 0

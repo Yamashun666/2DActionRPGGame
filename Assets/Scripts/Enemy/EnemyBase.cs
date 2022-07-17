@@ -28,7 +28,6 @@ public class EnemyBase : MonoBehaviour
         enemyCurrentMP = _data.enemyMaxMP;
         rb = GetComponent<Rigidbody2D>();
         renderer = GetComponent<SpriteRenderer>();
-
     }
 
 
