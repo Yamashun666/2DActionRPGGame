@@ -4,10 +4,47 @@ using UnityEngine;
 
 public class ItemBase : MonoBehaviour
 {
-    public Item itemData;
+    public bool isUse = false;
+    public ItemScriptableData itemData;
 
     public virtual void Use(PlayerStatus status)
     {
         Debug.Log("アイテムを使用しました。");
     }
+
+    public virtual void Consumption()
+    {
+
+    }
+
+    public virtual void Buff()
+    {
+
+    }
+
+    public virtual void Throw()
+    {
+
+    }
+
+    public virtual void Broken()
+    {
+
+    }
+
+    public virtual void ItemDamage()
+    {
+
+    }
+
+    public virtual void Buy()
+    {
+
+    }
+
+    public virtual void Sell()
+    {
+
+    }
+
 }
