@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: "\u3055\u304F\u3089\u3093\u307C"
   buyPrice: 0
-  itemType: 3
+  itemType: 1
+  effectForceIntType: 0
+  effectForceFloatType: 0
