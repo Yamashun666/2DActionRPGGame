@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "MyScriptable/Create PotionData")]
-public class PotionData : Item
+public class PotionData : ItemScriptableData
 {
     public int healValue = 0; 
 }

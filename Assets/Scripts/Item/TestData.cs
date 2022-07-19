@@ -5,7 +5,7 @@ using ClearSky;
 
 public class TestData : MonoBehaviour
 { 
-    public Item itemData;
+    public ItemScriptableData itemData;
     // Start is called before the first frame update
     void Start()
     {
