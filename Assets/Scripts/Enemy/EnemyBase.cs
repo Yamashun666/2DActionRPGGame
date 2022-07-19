@@ -35,12 +35,12 @@ public class EnemyBase : MonoBehaviour
     {
 
     }
-    public void Stay()
+    public virtual void Stay()
     {
         
     }
 
-    public void Junp()
+    public virtual void Junp()
     {
         if (isJunp) // もしジャンプ中なら早期リターンを行って処理を行わない。
         {
@@ -58,19 +58,19 @@ public class EnemyBase : MonoBehaviour
         }
     }
 
-    public void Run()
+    public virtual void Run()
     {
 
     }
 
-    public void Shot()
+    public virtual void Shot()
     {
 
     }
 
     
 
-    public void MeleeAttack()
+    public virtual void MeleeAttack()
     {
         if (isMeleeAttack)
         {
@@ -85,27 +85,27 @@ public class EnemyBase : MonoBehaviour
         }
     }
 
-    public void MeleeAttackEnd()
+    public virtual void MeleeAttackEnd()
     {
         isMeleeAttack = false;
     }
 
-    public void Defence()
+    public virtual void Defence()
     {
 
     }
 
-    public void Accelerate()
+    public virtual void Accelerate()
     {
 
     }
 
-    public void Attack()
+    public virtual void Attack()
     {
 
     }
 
-    public void Chase()
+    public virtual void Chase()
     {
         if (this.transform.position.x >= target.transform.position.x)
         {
@@ -120,7 +120,7 @@ public class EnemyBase : MonoBehaviour
         }
     }
 
-    public void Die()
+    public virtual void Die()
     {
         if(enemyCurrentHP <= 0)
         {
