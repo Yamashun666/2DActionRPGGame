@@ -6,6 +6,7 @@ public class ItemBase : MonoBehaviour
 {
     public bool isUse = false;
     public ItemScriptableData itemData;
+    public int itemAmount;
 
     public virtual void Use(PlayerStatus status)
     {
