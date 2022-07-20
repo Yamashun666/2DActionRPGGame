@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public enum ItemTypes
@@ -15,7 +14,7 @@ public enum ItemTypes
 public class ItemScriptableData : ScriptableObject
 {
     public string itemName = default;             // アイテムの名前
-    public string itemFlavourText = default;      //アイテムの設定など、フレーバーテキスト
+    public string itemInfomation = default;      //アイテムの設定、説明文
     public int price = default;                   //売買する価格。同一の物を使う。売買でレートを調整したい場合は、計算式の方で調整する。
     public int brokenPoint = default;             //アイテムの耐久値。これが0になるとアイテムは壊れる。
     public int throwDamage = default;             //投擲ダメージが衝突したときに与えるダメージ
