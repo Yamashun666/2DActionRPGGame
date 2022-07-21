@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9f7eee0e5b205b47991d938e7a62b48, type: 3}
   m_Name: Charry
   m_EditorClassIdentifier: 
-  itemName: 
-  itemInfomation: 
+  itemName: "\u30B5\u30AF\u30E9\u30F3\u30DC"
+  itemInfomation: "\u30CF\u30A4\u30B8\u30E3\u30F3\u30D7\u306E\u56DE\u6570\u3092\u6700\u5927\u5024\u306B\u30EA\u30BB\u30C3\u30C8\u3059\u308B\u3002"
   price: 0
   brokenPoint: 0
   throwDamage: 0
   useAmount: 0
-  itemType: 0
+  itemType: 3
   effectForceIntType: 0
   effectForceFloatType: 0
