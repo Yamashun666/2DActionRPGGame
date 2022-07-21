@@ -79,7 +79,6 @@ public class EnemyBase : MonoBehaviour
 
         else
         {
-            Debug.Log("fuck");
             status.currentHp -= _data.attackPower1;
             isMeleeAttack = true;
         }
