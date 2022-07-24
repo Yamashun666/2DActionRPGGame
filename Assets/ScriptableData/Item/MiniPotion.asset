@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: MiniPotion
   m_EditorClassIdentifier: 
   itemName: "\u30DF\u30CB\u30DD\u30FC\u30B7\u30E7\u30F3"
-  buyPrice: 0
+  itemInfomation: 
+  price: 0
+  brokenPoint: 0
+  useAmount: 0
   itemType: 0
+  effectForce: 0
+  itemIcon: {fileID: 21300000, guid: 1a4497d8531b845f185bb7742441138d, type: 3}
   healValue: 30

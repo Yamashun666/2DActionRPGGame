@@ -37,7 +37,8 @@ public class PlayerStatus : MonoBehaviour
             if(i.itemData.itemType == itemtype)
             {
                 i.Use(this);
-                
+                InventoryUI.Instance.OnListView(HaveItems);
+                return;
             }
         }
     }
@@ -69,5 +70,11 @@ public class PlayerStatus : MonoBehaviour
     public void AddItem(ItemBase item)
     {
         HaveItems.Add(item);
+        InventoryUI.Instance.OnListView(HaveItems);
+    }
+
+    public void Consumption(ItemBase item)
+    {
+        HaveItems.Remove(item);
     }
 }

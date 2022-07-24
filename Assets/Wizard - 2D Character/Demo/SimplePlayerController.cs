@@ -13,10 +13,12 @@ namespace ClearSky
         private int direction = 1;
         bool isJumping = false;
         private bool alive = true;
+        public bool isStepGenerate = false;
 
         [SerializeField] MagicBase speedUpMagic;
         [SerializeField] MagicBase hiJunpMagic;
         [SerializeField] MagicBase attackMagic;
+        [SerializeField] MagicBase stepGenerateMagic;
         [SerializeField] PlayerStatus playerStatus;
 
         public MagicBase HiJumpMagic { get { return hiJunpMagic; } }
@@ -42,8 +44,17 @@ namespace ClearSky
                 }
                 if (Input.GetMouseButtonDown(0))
                 {
-                    Debug.Log("fuck");
+                    //Debug.Log("fuck");
                     attackMagic.OnCall();
+                }
+                if (Input.GetKeyDown(KeyCode.C))
+                {
+                    stepGenerateMagic.OnCall();
+                    isStepGenerate = true;
+                }
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    InventoryUI.Instance.gameObject.SetActive(!InventoryUI.Instance.gameObject.activeSelf);
                 }
                 Hurt();
                 Die();

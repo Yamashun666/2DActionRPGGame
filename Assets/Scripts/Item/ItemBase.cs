@@ -6,11 +6,11 @@ public class ItemBase : MonoBehaviour
 {
     public bool isUse = false;
     public ItemScriptableData itemData;
-    public ItemList list;
     public int itemAmount;
 
     public virtual void Use(PlayerStatus status)
     {
+        status.Consumption(this);
         Debug.Log("アイテムを使用しました。");
     }
 
@@ -20,11 +20,6 @@ public class ItemBase : MonoBehaviour
         {
             
         }
-    }
-
-    public virtual void Get()
-    {
-
     }
 
     public virtual void Consumption()
