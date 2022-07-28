@@ -369,7 +369,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ad97a7346d43914c8cacf51cb86d4b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  list: {fileID: 11400000, guid: 5b4b0d3b7f0e9214fb8b1868ed8554e9, type: 2}
 --- !u!114 &187040292 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 794697843, guid: 904d0b8c28276a64c8101ddedd894d57, type: 3}
@@ -3019,6 +3018,36 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!1 &528822194
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 528822195}
+  m_Layer: 0
+  m_Name: StepPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &528822195
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528822194}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 857085964}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &540151307
 GameObject:
   m_ObjectHideFlags: 0
@@ -5577,11 +5606,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data: {fileID: 11400000, guid: 54353a073839d2e43b91c8aaf5992d94, type: 2}
   _status: {fileID: 187040289}
-  StepPreview: {fileID: 8897415422621050962, guid: 35a8b7aec7080894dbe94bfd4c2af159, type: 3}
+  generateStep: {fileID: 5038158462373233183, guid: 489bccbff7c99294b9f052ee969da10f, type: 3}
+  GeneratePos: {fileID: 528822195}
   simple: {fileID: 187040292}
-  isPreview: 0
-  preview: {x: 0, y: 0, z: 0}
-  direction: {x: 0, y: 0, z: 0}
 --- !u!1 &1768737066
 GameObject:
   m_ObjectHideFlags: 0
