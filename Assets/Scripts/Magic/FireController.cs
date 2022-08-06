@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FireController : MonoBehaviour
 {
+    [SerializeField] GameObject explodedFire;
     private EnemyBase _enemyHP;
     public float fireSpeed = default;
     private Vector3 direction;
@@ -41,6 +42,10 @@ public class FireController : MonoBehaviour
         {
             _enemyHP = hit.GetComponent<EnemyBase>();
             _enemyHP.enemyCurrentHP -= power;
+            for (int i = 0; i < 5; i++)
+            {
+                GameObject fire = Instantiate(explodedFire, this.transform.position, Quaternion.identity);
+            }
             Destroy(gameObject);
             Debug.Log(_enemyHP.enemyCurrentHP);
         }
@@ -50,6 +55,5 @@ public class FireController : MonoBehaviour
     {
         yield return new WaitForSeconds(deleteTime);
         Destroy(gameObject);
-        Debug.Log("‚ ‚Ù");
     }
 }

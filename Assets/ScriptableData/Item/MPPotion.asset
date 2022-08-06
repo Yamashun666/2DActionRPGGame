@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53d4e36c0a9997b4e9b57528b8084ed5, type: 3}
+  m_Name: MPPotion
+  m_EditorClassIdentifier: 
+  itemName: "\u30DF\u30CB\u30DD\u30FC\u30B7\u30E7\u30F3"
+  itemInfomation: 
+  price: 0
+  brokenPoint: 0
+  useAmount: 0
+  itemType: 1
+  effectForce: 0
+  itemIcon: {fileID: 21300000, guid: 1a4497d8531b845f185bb7742441138d, type: 3}
+  healValue: 30

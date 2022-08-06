@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -2180951019004018835}
   - component: {fileID: 1149532318}
   m_Layer: 0
-  m_Name: Fire
+  m_Name: ExplodedFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1744370327775508294}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.9544635, y: 2.4019818, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74de7356e117f844bb4f0fedc7f3386b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodedFire: {fileID: 2973754332395331036, guid: e27ed77e92d6d1441989e6a1ea6388f9, type: 3}
+  explodedFire: {fileID: 0}
   fireSpeed: 50
   deleteTime: 0.5
 --- !u!95 &1149532318
