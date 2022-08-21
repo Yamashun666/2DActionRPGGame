@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class ItemBase : MonoBehaviour
 {
-    public bool isUse = false;
     public ItemScriptableData itemData;
+    public InventoryUI itemList;
     public int itemAmount;
+    public bool isUse = false;
 
     public virtual void Use(PlayerStatus status)
     {
@@ -22,11 +23,6 @@ public class ItemBase : MonoBehaviour
         }
     }
 
-    public virtual void Consumption()
-    {
-
-    }
-
     public virtual void Buff()
     {
 
@@ -39,7 +35,10 @@ public class ItemBase : MonoBehaviour
 
     public virtual void Broken()
     {
-
+        if(itemData.brokenPoint <= 0)
+        {
+            Destroy(itemList);
+        }
     }
 
     public virtual void ItemDamage()
@@ -47,12 +46,7 @@ public class ItemBase : MonoBehaviour
 
     }
 
-    public virtual void Buy()
-    {
-
-    }
-
-    public virtual void Sell()
+    public virtual void BuySell()
     {
 
     }
