@@ -12,7 +12,7 @@ public class PlayerStatus : MonoBehaviour
 
     [SerializeField] MagicBase healMagic;
 
-    List<ItemBase> HaveItems = new List<ItemBase>();
+    public List<ItemBase> HaveItems = new List<ItemBase>();
     // Start is called before the first frame update
     void Start()
     {
