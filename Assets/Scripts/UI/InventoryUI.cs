@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class InventoryUI : MonoBehaviour
 {
-    public int inventoryNum = default;
-    public InventoryButton buttonPrefab = default;
+    public int inventoryNum = default; //何個ボタンを表示できるか
+    public InventoryButton buttonPrefab = default; //ここにボタンのPrafabをアタッチする
     public Transform buttonParent = default;
     private List<InventoryButton> buttonList = new List<InventoryButton>();
     public static InventoryUI Instance { get; private set; }
@@ -27,7 +27,7 @@ public class InventoryUI : MonoBehaviour
         
     }
 
-    void SetUp()
+    void SetUp() //inventoryNumの数だけ、ボタンを生成する
     {
         for (int i = 0; i < inventoryNum; i++)
         {
@@ -37,7 +37,7 @@ public class InventoryUI : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void OnListView(List<ItemBase> list)
+    public void OnListView(List<ItemBase> list) //スプライトを表示
     {
         foreach (var l in buttonList)
         {
