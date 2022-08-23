@@ -8,14 +8,27 @@ public class CraftBase : MonoBehaviour
     private int itemNum; // 必要なアイテム数
     [SerializeField] GameObject craftUI; //金床側にクラフトメニューをアタッチできるようにする
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            craftUI.gameObject.SetActive(false);
+        }
+    }
 
+    //金床がプレイヤーと接触した場合かつ、LeftShiftキーが押された場合、クラフトメニューが開かれる
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player") && Input.GetKeyDown(KeyCode.LeftShift))
         {
-            Debug.Log("fuck");
             CraftManu();
         }
+    }
+
+    //プレイヤーが金床を離れたら、メニューを消す
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        craftUI.gameObject.SetActive(false);
     }
     //金床がプレイヤーと接触した場合かつ、LeftShiftキーが押された場合、クラフトメニューが開かれる
 
@@ -23,6 +36,10 @@ public class CraftBase : MonoBehaviour
     private void CraftManu()
     {
         craftUI.gameObject.SetActive(true); //OntriggerEnter2Dしたら、クラフトメニューを表示する。
+        if (Input.GetKeyDown(KeyCode.Escape))// Escapeキーを押したら、メニューを閉じる
+        {
+            craftUI.gameObject.SetActive(false);
+        }
     }
 
     private void Craft(ItemBase item)

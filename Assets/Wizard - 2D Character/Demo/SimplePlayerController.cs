@@ -20,6 +20,7 @@ namespace ClearSky
         [SerializeField] MagicBase attackMagic;
         [SerializeField] MagicBase stepGenerateMagic;
         [SerializeField] PlayerStatus playerStatus;
+        [SerializeField] GameObject craftUI;
 
         public MagicBase HiJumpMagic { get { return hiJunpMagic; } }
 
